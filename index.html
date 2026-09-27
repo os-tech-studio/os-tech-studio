@@ -1,0 +1,483 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OS Tech Studio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #05070d;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 8%;
+    background: rgba(5,7,13,0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #1b2235;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #00e5ff;
+}
+
+.logo span {
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00e5ff;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 40px;
+    background:
+        radial-gradient(circle at center, #102a40 0%, #05070d 55%);
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    color: #00e5ff;
+    text-shadow: 0 0 25px rgba(0,229,255,0.5);
+}
+
+.hero h2 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #b7c1d1;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: #00e5ff;
+    color: #001014;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0,229,255,0.5);
+}
+
+/* SECCIONES */
+section {
+    padding: 90px 8%;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo h2 {
+    font-size: 40px;
+    color: #00e5ff;
+}
+
+.titulo p {
+    color: #9ba7bb;
+    margin-top: 10px;
+}
+
+/* SERVICIOS */
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #0b101b;
+    border: 1px solid #1b2a40;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #00e5ff;
+    box-shadow: 0 0 25px rgba(0,229,255,0.12);
+}
+
+.card .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #00e5ff;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #aeb8c9;
+    line-height: 1.5;
+}
+
+/* SOBRE */
+.sobre {
+    background: #080c14;
+    text-align: center;
+}
+
+.sobre p {
+    max-width: 800px;
+    margin: auto;
+    color: #b7c1d1;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* PORTAFOLIO */
+.portafolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.proyecto {
+    background: #0b101b;
+    border-radius: 18px;
+    padding: 30px;
+    border: 1px solid #1b2a40;
+}
+
+.proyecto h3 {
+    color: #00e5ff;
+    margin-bottom: 12px;
+}
+
+.proyecto p {
+    color: #aeb8c9;
+    line-height: 1.5;
+}
+
+/* CONTACTO */
+.contacto {
+    text-align: center;
+    background: #080c14;
+}
+
+.contacto p {
+    color: #b7c1d1;
+    font-size: 18px;
+}
+
+/* FOOTER */
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #718096;
+    border-top: 1px solid #1b2235;
+}
+
+/* CELULAR */
+@media(max-width: 700px) {
+
+    nav {
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">OS <span>TECH STUDIO</span></div>
+
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+
+<!-- INICIO -->
+
+<section class="hero" id="inicio">
+
+    <div>
+
+        <h1>OS TECH STUDIO</h1>
+
+        <h2>Soluciones digitales para tu negocio</h2>
+
+        <p>
+            Creamos páginas web, sistemas personalizados y soluciones
+            tecnológicas para emprendedores y pequeños negocios.
+        </p>
+
+        <a href="#servicios" class="btn">
+            Ver nuestros servicios
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICIOS -->
+
+<section id="servicios">
+
+    <div class="titulo">
+
+        <h2>Nuestros servicios</h2>
+
+        <p>
+            Tecnología diseñada para ayudarte a crecer.
+        </p>
+
+    </div>
+
+
+    <div class="servicios">
+
+        <div class="card">
+
+            <div class="icon">🌐</div>
+
+            <h3>Páginas Web</h3>
+
+            <p>
+                Diseñamos páginas web modernas, rápidas y adaptadas
+                a celulares y computadores.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🐍</div>
+
+            <h3>Sistemas en Python</h3>
+
+            <p>
+                Creamos programas personalizados para automatizar
+                procesos y organizar información.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🤖</div>
+
+            <h3>Automatización</h3>
+
+            <p>
+                Soluciones tecnológicas para reducir tareas repetitivas
+                y mejorar procesos.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📱</div>
+
+            <h3>Catálogos Digitales</h3>
+
+            <p>
+                Catálogos modernos para mostrar productos y servicios
+                directamente desde internet.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NOSOTROS -->
+
+<section class="sobre" id="nosotros">
+
+    <div class="titulo">
+
+        <h2>Sobre OS Tech Studio</h2>
+
+    </div>
+
+    <p>
+
+        Somos un proyecto tecnológico enfocado en crear soluciones
+        digitales accesibles para emprendedores y pequeños negocios.
+
+        <br><br>
+
+        Nuestro objetivo es utilizar la tecnología para convertir
+        ideas en herramientas útiles, modernas y fáciles de utilizar.
+
+    </p>
+
+</section>
+
+
+<!-- PROYECTOS -->
+
+<section id="proyectos">
+
+    <div class="titulo">
+
+        <h2>Proyectos</h2>
+
+        <p>
+            Algunos de nuestros proyectos y desarrollos.
+        </p>
+
+    </div>
+
+
+    <div class="portafolio">
+
+        <div class="proyecto">
+
+            <h3>🤖 ZEUS</h3>
+
+            <p>
+                Proyecto de asistente inteligente desarrollado
+                utilizando Python.
+            </p>
+
+        </div>
+
+
+        <div class="proyecto">
+
+            <h3>🌐 Web para negocios</h3>
+
+            <p>
+                Diseños web personalizados para presentar empresas,
+                servicios y productos.
+            </p>
+
+        </div>
+
+
+        <div class="proyecto">
+
+            <h3>💻 Sistemas personalizados</h3>
+
+            <p>
+                Programas diseñados para solucionar necesidades
+                específicas de cada negocio.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTO -->
+
+<section class="contacto" id="contacto">
+
+    <div class="titulo">
+
+        <h2>¿Tienes un proyecto?</h2>
+
+        <p>
+            Cuéntanos tu idea y podemos convertirla en una solución digital.
+        </p>
+
+    </div>
+
+    <!-- CAMBIA EL NÚMERO POR TU WHATSAPP -->
+
+    <a
+        class="btn"
+        href="https://wa.me/573244029562
+        target="_blank">
+
+        💬 Contactar por WhatsApp
+
+    </a>
+
+</section>
+
+
+<footer>
+
+    © 2026 OS Tech Studio — Todos los derechos reservados.
+
+</footer>
+
+
+</body>
+</html>
